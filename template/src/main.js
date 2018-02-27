@@ -10,8 +10,16 @@ import router from './router'
 {{#vuex}}
 import store from './store'
 {{/vuex}}
+import FastClick from 'fastclick'
+import VConsole from 'vconsole'
+import  'lib-flexible'
 
 Vue.config.productionTip = false
+FastClick.attach(document.body) //解决移动端300ms延迟
+ if( process.env.NODE_ENV != 'production' ){
+   //开发环境 开启调试模式
+   let vConsole = new VConsole()
+ }
 
 /* eslint-disable no-new */
 new Vue({
