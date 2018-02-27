@@ -24,10 +24,12 @@ router.beforeEach ((to,from,next) => {
     let url = Utils.resetUrl()
     window.location.href = url
   }else{
+    {{#weixin}}
     if( Utils.BrowserInfo.versions.weixin ){
       //微信环境配置sdk
       
     }
+    {{/weixin}}
     next()
   }
 })

@@ -37,19 +37,19 @@ module.exports = {
       when: 'isNotTest',
       type: 'string',
       required: true,
-      message: 'Project name',
+      message: '项目名称',
     },
     description: {
       when: 'isNotTest',
       type: 'string',
       required: false,
       message: 'Project description',
-      default: 'A Vue.js project',
+      default: '鸟瞰智能项目描述',
     },
     author: {
       when: 'isNotTest',
       type: 'string',
-      message: 'Author',
+      message: '作者',
     },
     build: {
       when: 'isNotTest',
@@ -72,17 +72,27 @@ module.exports = {
     router: {
       when: 'isNotTest',
       type: 'confirm',
-      message: 'Install vue-router?',
+      message: '集成 vue-router?',
     },
-    vuex:{ //  add
+    vuex: { //  add
       when: 'isNotTest',
       type:'confirm',
-      message:'Install vuex?'
+      message:'集成 vuex?'
+    },
+    http: {
+      when: 'isNotTest',
+      type:'confirm',
+      message:'集成封装好的 axios?'
+    },
+    weixin: {
+      when: 'isNotTest',
+      type: 'confirm',
+      message: '集成微信SDK?',
     },
     lint: {
       when: 'isNotTest',
       type: 'confirm',
-      message: 'Use ESLint to lint your code?',
+      message: '使用ESLint来约束代码?',
     },
     lintConfig: {
       when: 'isNotTest && lint',
@@ -106,38 +116,38 @@ module.exports = {
         },
       ],
     },
-    unit: {
-      when: 'isNotTest',
-      type: 'confirm',
-      message: 'Set up unit tests',
-    },
-    runner: {
-      when: 'isNotTest && unit',
-      type: 'list',
-      message: 'Pick a test runner',
-      choices: [
-        {
-          name: 'Jest',
-          value: 'jest',
-          short: 'jest',
-        },
-        {
-          name: 'Karma and Mocha',
-          value: 'karma',
-          short: 'karma',
-        },
-        {
-          name: 'none (configure it yourself)',
-          value: 'noTest',
-          short: 'noTest',
-        },
-      ],
-    },
-    e2e: {
-      when: 'isNotTest',
-      type: 'confirm',
-      message: 'Setup e2e tests with Nightwatch?',
-    },
+    // unit: {
+    //   when: 'isNotTest',
+    //   type: 'confirm',
+    //   message: '设置单元测试?',
+    // },
+    // runner: {
+    //   when: 'isNotTest && unit',
+    //   type: 'list',
+    //   message: 'Pick a test runner',
+    //   choices: [
+    //     {
+    //       name: 'Jest',
+    //       value: 'jest',
+    //       short: 'jest',
+    //     },
+    //     {
+    //       name: 'Karma and Mocha',
+    //       value: 'karma',
+    //       short: 'karma',
+    //     },
+    //     {
+    //       name: 'none (configure it yourself)',
+    //       value: 'noTest',
+    //       short: 'noTest',
+    //     },
+    //   ],
+    // },
+    // e2e: {
+    //   when: 'isNotTest',
+    //   type: 'confirm',
+    //   message: 'Setup e2e tests with Nightwatch?',
+    // },
     autoInstall: {
       when: 'isNotTest',
       type: 'list',
@@ -165,17 +175,18 @@ module.exports = {
   filters: {
     '.eslintrc.js': 'lint',
     '.eslintignore': 'lint',
-    'config/test.env.js': 'unit || e2e',
-    'build/webpack.test.conf.js': "unit && runner === 'karma'",
-    'test/unit/**/*': 'unit',
-    'test/unit/index.js': "unit && runner === 'karma'",
-    'test/unit/jest.conf.js': "unit && runner === 'jest'",
-    'test/unit/karma.conf.js': "unit && runner === 'karma'",
-    'test/unit/specs/index.js': "unit && runner === 'karma'",
-    'test/unit/setup.js': "unit && runner === 'jest'",
-    'test/e2e/**/*': 'e2e',
+    // 'config/test.env.js': 'unit || e2e',
+    // 'build/webpack.test.conf.js': "unit && runner === 'karma'",
+    // 'test/unit/**/*': 'unit',
+    // 'test/unit/index.js': "unit && runner === 'karma'",
+    // 'test/unit/jest.conf.js': "unit && runner === 'jest'",
+    // 'test/unit/karma.conf.js': "unit && runner === 'karma'",
+    // 'test/unit/specs/index.js': "unit && runner === 'karma'",
+    // 'test/unit/setup.js': "unit && runner === 'jest'",
+    // 'test/e2e/**/*': 'e2e',
     'src/router/**/*': 'router',
     'src/store/**/*': 'vuex', // add 加入自己的目录
+    'src/http.js': 'http', //add 加入自己的目录
   },
   complete: function(data, { chalk }) {
     const green = chalk.green
