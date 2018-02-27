@@ -10,9 +10,9 @@
     <div class="selector3">
       你好
     </div>
+    <p>640设计稿均分10等份，每份 px2rem(64px)</p>
     <div class="container">
-      <span v-for="n in 10" :key="n">
-        {{n}}
+      <span v-for="n in 10" :key="n" v-text="n">
       </span>
     </div>
   </div>
