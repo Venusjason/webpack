@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+{{#http}}
+import Http from './../http.js'
+{{/http}}
 import createLogger from 'vuex/dist/logger'
 
 Vue.use(Vuex)
