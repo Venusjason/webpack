@@ -84,17 +84,6 @@
     }
 }
 
-@mixin media-screen() {
-    @media screen and (min-width: 768px) {
-        //pc
-        width: 768px;
-    }
-    @media screen and (max-width: 767px) {
-        // moble
-        width: 100%;
-    }
-}
-
 @mixin full-img-bg($path) {
     //背景图占满 传入图片路径
     background-image: url($path);

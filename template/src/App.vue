@@ -36,9 +36,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  @include media-screen();
   background-color: #fff;
   height: 100%;
+  width: px2rem(640px); //此处以640设计稿
   position: relative;
 }
 @media screen and (min-width: 768px) {
@@ -54,20 +54,20 @@ body {
     border-bottom: 0;
     span.phone-btn {
       position: absolute;
-      height: 2rem;
+      height: px2rem(80px);;
       width: 16px;
       border: 2px solid #fff;
       border-right: 0;
       left: -18px;
       border-radius: 20px;
       &.phone-btn-1 {
-        top: 0.5rem;
+        top: px2rem(20px);
       }
       &.phone-btn-2 {
-        top: 3.5rem;
+        top: px2rem(160px);
       }
       &.phone-btn-3 {
-        top: 6.5rem;
+        top: px2rem(280px);
       }
     }
   }
