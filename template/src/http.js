@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { appConfig } from './utils.js'
+import { appConfig } from './utils'
 
 axios.defaults.baseURL = appConfig.baseUrl  //请求接口地址
 axios.defaults.validateStatus = function (status) {

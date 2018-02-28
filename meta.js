@@ -1,5 +1,6 @@
 const path = require('path')
 const fs = require('fs')
+const isTest = false
 
 const {
   sortDependencies,
@@ -175,6 +176,9 @@ module.exports = {
   filters: {
     '.eslintrc.js': 'lint',
     '.eslintignore': 'lint',
+    'test/*': isTest,
+    'config/test.env.js': isTest,
+    'build/webpack.test.conf.js': isTest,
     // 'config/test.env.js': 'unit || e2e',
     // 'build/webpack.test.conf.js': "unit && runner === 'karma'",
     // 'test/unit/**/*': 'unit',
