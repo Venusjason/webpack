@@ -6,9 +6,11 @@
       <span class="phone-btn phone-btn-2"></span>
       <span class="phone-btn phone-btn-3"></span>
     </div>
-    {{#router}}
-    <router-view/>
-    {{/router}}
+    <div class="pages-container">
+      {{#router}}
+      <router-view/>
+      {{/router}}
+    </div>
   </div>
 </template>
 
@@ -20,6 +22,7 @@ export default {
 
 <style lang="scss">
 @import "./styles/common";
+$min-pc-screen: 960px;
 html,
 body {
   padding: 0;
@@ -29,20 +32,25 @@ body {
 }
 body {
   @include full-img-bg("./assets/pcbg.jpg");
+  //overflow: hidden;
 }
 #app {
   margin: 0 auto;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  //text-align: center;
   background-color: #fff;
   height: 100%;
-  width: px2rem(640px); //此处以640设计稿
   position: relative;
+  padding: 0;
+  display: flex;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $min-pc-screen) {
   // pc端设备 ipad等平板
+  #app {
+    width: $min-pc-screen;
+  }
   #phone-model {
     position: absolute;
     top: 0;
@@ -72,10 +80,19 @@ body {
     }
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: $min-pc-screen) {
   //移动端设备
+  #app {
+    width: 100%;
+  }
   #phone-model {
     display: none;
   }
+}
+.pages-container{
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling : touch;  
 }
 </style>
