@@ -18,7 +18,7 @@ import  'lib-flexible'
 Vue.config.productionTip = false
 // 解决移动端300ms延迟
 FastClick.attach(document.body)
-if( process.env.NODE_ENV != 'production' ){
+if( process.env.NODE_ENV !== 'production' ){
   // 开发环境 开启调试模式
   new VConsole()
 }
