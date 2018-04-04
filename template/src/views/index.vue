@@ -1,68 +1,29 @@
 <template>
-  <div class="page page-index">
+  <div class="page-index">
     默认路由页面  Index   
-    <div class="selector">
-      默认按照640设计稿(iphone 5 尺寸)
-    </div>
-    <div class="selector2">
-      你好
-    </div>
-    <div class="selector3">
-      你好
-    </div>
-    <p>640设计稿均分10等份，每份 px2rem(64px)</p>
-    <div class="container">
-      <span v-for="n in 10" :key="n" v-text="n">
-      </span>
-    </div>
   </div>
 </template>
 <script>
+import { Indicator } from 'mint-ui'
+
 export default {
-  name: "Index",
-  data() {
-    return {};
+  name: 'Index',
+  data () {
+    return {}
   },
   computed: {},
-  mounted() {},
+  mounted () {
+    Indicator.open('集成mint-ui按需引入')
+  },
   methods: {}
-};
+}
 </script>
+
 <style lang="scss" scoped>
 @import "./../styles/common"; //导入公用函数和全局变量
 
 .page-index {
+  @include font-dpr(40px);
   color: green;
-  div {
-    margin-bottom: 20px;
-  }
-  .selector {
-    //width: px2rem(150px);
-    //height: 64px;
-    @include font-dpr(28px);
-    border: 1px solid #ddd;
-  }
-  .selector2 {
-    width: 150px;
-    height: 64px;
-    font-size: 28px;
-    border: 1px solid #ddd;
-    background-color: red;
-  }
-  .selector3 {
-    width: px2rem(150px);
-    height: 64px;
-    font-size: 28px;
-    border: 1px solid #ddd;
-    background-color: red;
-  }
-  .container {
-    span {
-      display: inline-block;
-      width: px2rem(64px);
-      margin: 0;
-      padding: 0;
-    }
-  }
 }
 </style>

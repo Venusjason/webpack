@@ -1,16 +1,8 @@
 <template>
   <div id="app">
-    <div id="phone-model">
-      <!-- 手机模型 -->
-      <span class="phone-btn phone-btn-1"></span>
-      <span class="phone-btn phone-btn-2"></span>
-      <span class="phone-btn phone-btn-3"></span>
-    </div>
-    <div class="pages-container">
-      {{#router}}
-      <router-view/>
-      {{/router}}
-    </div>
+    {{#router}}
+    <router-view class="page"/>
+    {{/router}}
   </div>
 </template>
 
@@ -21,78 +13,22 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./styles/common";
-$min-pc-screen: 960px;
-html,
-body {
+@import './styles/common';
+html,body {
+  width: 100%;
+  height: 100%;
   padding: 0;
   margin: 0;
-  width: 100%;
-  height: 100%;
-}
-body {
-  @include full-img-bg("./assets/pcbg.jpg");
-  //overflow: hidden;
 }
 #app {
+  max-width: 980px;
+  height: 100%;
   margin: 0 auto;
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  //text-align: center;
-  background-color: #fff;
-  height: 100%;
-  position: relative;
-  padding: 0;
-  display: flex;
-}
-@media screen and (min-width: $min-pc-screen) {
-  // pc端设备 ipad等平板
-  #app {
-    width: $min-pc-screen;
-  }
-  #phone-model {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -40px;
-    right: -40px;
-    border: 2px solid #fff;
-    border-top: 0;
-    border-bottom: 0;
-    span.phone-btn {
-      position: absolute;
-      height: px2rem(80px);;
-      width: 16px;
-      border: 2px solid #fff;
-      border-right: 0;
-      left: -18px;
-      border-radius: 20px;
-      &.phone-btn-1 {
-        top: px2rem(20px);
-      }
-      &.phone-btn-2 {
-        top: px2rem(160px);
-      }
-      &.phone-btn-3 {
-        top: px2rem(280px);
-      }
-    }
-  }
-}
-@media screen and (max-width: $min-pc-screen) {
-  //移动端设备
-  #app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  .page {
     width: 100%;
+    height: 100%;
+    position: relative;
   }
-  #phone-model {
-    display: none;
-  }
-}
-.pages-container{
-  width: 100%;
-  height: 100%;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling : touch;  
 }
 </style>
