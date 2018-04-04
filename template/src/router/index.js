@@ -12,11 +12,11 @@ const routes = [
   }
 ]
 
-const router =  new Router ({
+const router = new Router({
   routes
 })
 
-router.beforeEach ((to, from, next) => {
+router.beforeEach((to, from, next) => {
   // 路由拦截器
   next()
 })

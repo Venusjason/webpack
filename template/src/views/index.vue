@@ -1,7 +1,5 @@
 <template>
-  <div class="page-index">
-    默认路由页面Index   
-  </div>
+  <div class="page-index">默认路由页面</div>
 </template>
 <script>
 import { Indicator } from 'mint-ui'
