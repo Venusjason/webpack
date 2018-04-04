@@ -1,6 +1,6 @@
 <template>
   <div class="page-index">
-    默认路由页面  Index   
+    默认路由页面Index   
   </div>
 </template>
 <script>
