@@ -14,14 +14,17 @@ export default {
 
 <style lang="scss">
 @import './styles/common';
-html,body {
-  width: 100%;
+html {
   height: 100%;
-  padding: 0;
-  margin: 0;
+  background-color: #f2f2f2;
+}
+body {
+  max-width: $max-screen-width;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #fff;
 }
 #app {
-  max-width: 980px;
   height: 100%;
   margin: 0 auto;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
